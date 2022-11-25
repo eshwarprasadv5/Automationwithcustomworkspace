@@ -1,6 +1,6 @@
 from openpyxl import Workbook, load_workbook
 import sys
-wb = load_workbook('/data/testsuite/Testsuite.xlsx')
+wb = load_workbook('data/testsuite/Testsuite.xlsx')
 sh=wb['TestSuite'] 
 test_folders_loc=[]
 for sh_rowB in sh['B']:
@@ -21,7 +21,7 @@ for file in input_file_name:
     t1=test_folders_loc.index(file)+1
     sh['A'+str(t1)].value=1
     print(sh['A'+str(t1)].value)
-    wb.save('/data/testsuite/Testsuite.xlsx')
+    wb.save('data/testsuite/Testsuite.xlsx')
     wb2=load_workbook(file)
     sh2=wb2['Testcases']
     product_names=[]
