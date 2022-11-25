@@ -16,7 +16,6 @@ for file in input_file_name:
    if(file in test_folders_loc):
     t1=test_folders_loc.index(file)+1
     sh['A'+str(t1)].value=1
-    print(sh['A'+str(t1)].value)
     wb.save('data/testsuite/Testsuite.xlsx')
     wb2=load_workbook(file)
     sh2=wb2['Testcases']
